@@ -276,8 +276,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Skill/" itemprop="url" rel="index">
-                    <span itemprop="name">Skill</span>
+                  <a href="/categories/JavaScrip/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScrip</span>
                   </a>
                 </span>
 
@@ -319,97 +319,14 @@
 
       
         
-          
-            <h3 id="jQuery-语法"><a href="#jQuery-语法" class="headerlink" title="jQuery 语法"></a>jQuery 语法</h3><h4 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h4><p>jQuery语法是为 HTML 元素的选取编制的，可以对元素执行某些操作。</p>
-<p>基础语法是：<strong>$(selector).action()</strong></p>
-<ul>
-<li><p>美元符号定义 jQuery</p>
-</li>
-<li><p>选择符（selector）“查询”和“查找” HTML 元素</p>
-</li>
-<li><p>jQuery 的 action() 执行对元素的操作</p>
-</li>
-</ul>
-<h4 id="文档就绪函数"><a href="#文档就绪函数" class="headerlink" title="文档就绪函数"></a>文档就绪函数</h4><p>所有jQuery函数位于一个 <strong>document ready</strong> 函数中，这是为了防止文档在完全加载（就绪）之前运行 jQuery 代码。</p>
-<pre><code>$(document).ready(function(){
-
---- jQuery functions go here ----
-
-});
-</code></pre><h3 id="jQuery-选择器"><a href="#jQuery-选择器" class="headerlink" title="jQuery 选择器"></a>jQuery 选择器</h3><ul>
-<li><p>元素选择器</p>
-<p>  使用 CSS 选择器来选取 HTML 元素。  </p>
-<p>  $(“p”) 选取 <code>&lt;p&gt;</code> 元素。</p>
-<p>  $(“p.intro”) 选取所有 class=”intro” 的 <code>&lt;p&gt;</code> 元素。</p>
-<p>  $(“p#demo”) 选取所有 id=”demo” 的 <code>&lt;p&gt;</code> 元素。</p>
-</li>
-<li><p>属性选择器</p>
-<p>  使用 XPath 表达式来选择带有给定属性的元素。</p>
-<p>  $(“[href]”) 选取所有带有 href 属性的元素。</p>
-<p>  $(“[href=’#’]”) 选取所有带有 href 值等于 “#” 的元素。</p>
-<p>  $(“[href!=’#’]”) 选取所有带有 href 值不等于 “#” 的元素。</p>
-<p>  $(“[href$=’.jpg’]”) 选取所有 href 值以 “.jpg” 结尾的元素。</p>
-</li>
-<li><p>CSS选择器</p>
-<p>  使用CSS 选择器可用于改变 HTML 元素的 CSS 属性。</p>
-<p>  $(“p”).css(“background-color”,”red”); 所有 p 元素的背景颜色更改为红色。</p>
-</li>
-</ul>
-<h3 id="jQuery-事件函数"><a href="#jQuery-事件函数" class="headerlink" title="jQuery 事件函数"></a>jQuery 事件函数</h3><pre><code>$(document).ready(function(){
-      $(&quot;button&quot;).click(function(){
-        $(&quot;p&quot;).hide();
-      });
-});
-</code></pre><h4 id="单独文件中的函数"><a href="#单独文件中的函数" class="headerlink" title="单独文件中的函数"></a>单独文件中的函数</h4><p> 为了使jQuery 函数易于维护，可以把 jQuery 函数放到独立的 .js 文件中，通过 src 属性来引用文件。</p>
-<pre><code>&lt;head&gt;
-
-&lt;script type=&quot;text/javascript&quot; src=&quot;jquery.js&quot;&gt;&lt;/script&gt;
-
-&lt;script type=&quot;text/javascript&quot; src=&quot;my_jquery_functions.js&quot;&gt;&lt;/script&gt;
-
-&lt;/head&gt;
-</code></pre><h4 id="jQuery-名称冲突"><a href="#jQuery-名称冲突" class="headerlink" title="jQuery 名称冲突"></a>jQuery 名称冲突</h4><p>jQuery 使用 $ 符号作为 jQuery 的简介方式。</p>
-<p>某些其他 JavaScript 库中的函数（比如 Prototype）同样使用 $ 符号。</p>
-<p>jQuery 使用名为 <strong>noConflict()</strong> 的方法来解决该问题。</p>
-<p>var jq=jQuery.noConflict()，帮助您使用自己的名称（比如 jq）来代替 $ 符号。</p>
-<h4 id="jQuery-原则"><a href="#jQuery-原则" class="headerlink" title="jQuery 原则"></a>jQuery 原则</h4><ul>
-<li><p>把所有 jQuery 代码置于事件处理函数中</p>
-</li>
-<li><p>把所有事件处理函数置于文档就绪事件处理器中</p>
-</li>
-<li><p>把 jQuery 代码置于单独的 .js 文件中</p>
-</li>
-<li><p>如果存在名称冲突，则重命名 jQuery 库</p>
-</li>
-</ul>
-<h3 id="jQuery常用函数"><a href="#jQuery常用函数" class="headerlink" title="jQuery常用函数"></a>jQuery常用函数</h3><h4 id="hide-和-show"><a href="#hide-和-show" class="headerlink" title="hide() 和 show()"></a>hide() 和 show()</h4><pre><code>$(selector).hide(speed,callback);
-
-$(selector).show(speed,callback);
-</code></pre><p>可选的 speed 参数规定隐藏/显示的速度，可以取以下值：”slow”、”fast” 或毫秒。<br>可选的 callback 参数是隐藏或显示完成后所执行的函数名称。</p>
-<h4 id="toggle"><a href="#toggle" class="headerlink" title="toggle()"></a>toggle()</h4><pre><code>$(selector).toggle(speed,callback);
-</code></pre><h4 id="Fading方法"><a href="#Fading方法" class="headerlink" title="Fading方法"></a>Fading方法</h4><ul>
-<li><p>fadeIn()</p>
-<pre><code>$(selector).fadeIn(speed,callback);
-</code></pre><p>  用于淡入已隐藏的元素。</p>
-</li>
-<li><p>fadeOut()</p>
-<pre><code>$(selector).fadeOut(speed,callback);
-</code></pre><p>  用于淡出可见元素。</p>
-</li>
-<li><p>fadeToggle()</p>
-<pre><code>$(selector).fadeToggle(speed,callback);
-</code></pre><p>  在 fadeIn() 与 fadeOut() 方法之间进行切换。</p>
-</li>
-<li><p>fadeTo()</p>
-<pre><code>$(selector).fadeTo(speed,opacity,callback);
-</code></pre><p>  允许渐变为给定的不透明度（值介于 0 与 1 之间）。</p>
-<p>  必需的 speed 参数规定效果的时长。它可以取以下值：”slow”、”fast” 或毫秒。</p>
-<p>  必需的 opacity 参数将淡入淡出效果设置为给定的不透明度（值介于 0 与 1 之间）。</p>
-<p>  可选的 callback 参数是该函数完成后所执行的函数名称。</p>
-</li>
-</ul>
-
-          
+          <blockquote>
+<p>jquery就对javascript的一个扩展，封装，就是让javascript更好用，更简单。</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/25/jQuery 教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -485,8 +402,8 @@ $(selector).show(speed,callback);
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Memo/" itemprop="url" rel="index">
-                    <span itemprop="name">Memo</span>
+                  <a href="/categories/资源收集/" itemprop="url" rel="index">
+                    <span itemprop="name">资源收集</span>
                   </a>
                 </span>
 
@@ -528,142 +445,14 @@ $(selector).show(speed,callback);
 
       
         
-          
-            <h3 id="开发帮助工具"><a href="#开发帮助工具" class="headerlink" title="开发帮助工具"></a>开发帮助工具<br></h3><p><a href="http://tool.oschina.net/" target="_blank" rel="external">在线工具</a></p>
-<h3 id="开发图标资源"><a href="#开发图标资源" class="headerlink" title="开发图标资源"></a>开发图标资源<br></h3><p><a href="http://www.iconpng.com/" target="_blank" rel="external">IconPng</a><br><br><a href="http://www.easyicon.net/" target="_blank" rel="external">EasyIcon</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/20/阅读书单/" itemprop="url">
-                  阅读A计划（持续更新）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-20T23:18:21+08:00" content="2016-07-20">
-              2016-07-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Plan/" itemprop="url" rel="index">
-                    <span itemprop="name">Plan</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/07/20/阅读书单/" class="leancloud_visitors" data-flag-title="阅读A计划（持续更新）">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>现代社会的一个显著特征就是节奏变得越来越快，通过互联网，人们可以轻而易举的获取需要的信息，但是如果这些信息只是被直接使用而不陷入“学了用，用了忘”的低效模式。<br>不时看到交流学习经验的帖子都很推荐写博客的做法，为了巩固所学知识，便于高效利用，也为了查漏补缺，使知识系统更加体系化，专业化，我也就折腾了几天搭建了这个博客。我想既然开始了就好好的坚持下去，这里不仅会记录开发学习的经验心得，也会分享生活中的有趣片段。<br>一个合格的开发者要基础扎实，而一个卓越的开发者则要走在时代的前沿，我始终认为开发者要树立终身学习的观念，这样才能不被时代所抛弃，进而成为一个合格的开发者，最终成为时代的弄潮儿。</p>
+          <blockquote>
+<p>收集一些开发过程中或者生活中实用的帮助类型的网站。</p>
 </blockquote>
-<h2 id="2016年阅读书目"><a href="#2016年阅读书目" class="headerlink" title="2016年阅读书目"></a>2016年阅读书目</h2><ul>
-<li>《Java编程思想 第四版》</li>
-<li>《流言》</li>
-</ul>
-<p>开发方面我选择了这本号称“Java圣经”的《Thinking in Java Fourth Edition》自己买了机械工业出版社出版的中文翻译版本，另外还有英文原版的PDF，打算对照着认真研读一下，对代码构建和英语水平的提高应该都是大有裨益的。另外一本张爱玲的《流言》，读它的原因是手头刚好有一本，聊胜于无吧。</p>
-<p><img src="https://raw.githubusercontent.com/stoneJuly/stoneJuly.github.io/master/blog/java编程思想第四版.jpg" alt="《Java编程思想 第四版》"></p>
-<p><img src="https://raw.githubusercontent.com/stoneJuly/stoneJuly.github.io/master/blog/流言.jpg" alt="《流言》"></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/21/优秀网页集合/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -739,8 +528,8 @@ $(selector).show(speed,callback);
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Skill/" itemprop="url" rel="index">
-                    <span itemprop="name">Skill</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -837,6 +626,132 @@ $(selector).show(speed,callback);
             
               
                 
+                <a class="post-title-link" href="/2016/07/20/阅读书单/" itemprop="url">
+                  阅读A计划（持续更新）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-20T23:18:21+08:00" content="2016-07-20">
+              2016-07-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/学习计划/" itemprop="url" rel="index">
+                    <span itemprop="name">学习计划</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/07/20/阅读书单/" class="leancloud_visitors" data-flag-title="阅读A计划（持续更新）">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>现代社会的一个显著特征就是节奏变得越来越快，通过互联网，人们可以轻而易举的获取需要的信息，但是如果这些信息只是被直接使用而不加以整理就会陷入<em>“学了用，用了忘”</em>的低效模式。</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/20/阅读书单/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/17/Android Studio Hot Key/" itemprop="url">
                   Android Studio Hot Key
                 </a>
@@ -865,8 +780,8 @@ $(selector).show(speed,callback);
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Skill/" itemprop="url" rel="index">
-                    <span itemprop="name">Skill</span>
+                  <a href="/categories/Android/" itemprop="url" rel="index">
+                    <span itemprop="name">Android</span>
                   </a>
                 </span>
 
@@ -908,230 +823,14 @@ $(selector).show(speed,callback);
 
       
         
-          
-            <table>
-<thead>
-<tr>
-<th>Windows</th>
-<th style="text-align:center">Mac</th>
-<th style="text-align:right">Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘D</code></td>
-<td style="text-align:right">复制整行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘delete</code></td>
-<td style="text-align:right">删除整行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘X</code></td>
-<td style="text-align:right">剪切，若无选中文本剪切整行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌥⇧↑↓</code></td>
-<td style="text-align:right">上下移动整行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"></td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⇧⏎</code></td>
-<td style="text-align:right">光标换行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌃P</code></td>
-<td style="text-align:right">光标移动到下一行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌃N</code></td>
-<td style="text-align:right">光标移动到上一行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘[</code></td>
-<td style="text-align:right">返回到上一次编辑位置</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘]</code></td>
-<td style="text-align:right">前进到上一次编辑位置</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥⏎</code></td>
-<td style="text-align:right">在当前行上添加一行，光标定位到行首</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"></td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥M</code></td>
-<td style="text-align:right">抽取为方法</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥F</code></td>
-<td style="text-align:right">抽取为成员属性</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥V</code></td>
-<td style="text-align:right">自动生成变量</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥P</code></td>
-<td style="text-align:right">将内部变量抽取成方法的参数</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"></td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘／</code></td>
-<td style="text-align:right">单行注释</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥／</code></td>
-<td style="text-align:right">多行注释</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌥↑</code></td>
-<td style="text-align:right">选择当前光标处所在单词或行</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌃O</code></td>
-<td style="text-align:right">快捷覆写方法</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘Z</code></td>
-<td style="text-align:right">撤销上次操作</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⇧F6</code></td>
-<td style="text-align:right">重命名</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥L</code></td>
-<td style="text-align:right">整理代码去除无效引用</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⇧U</code></td>
-<td style="text-align:right">大小写转换</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘J</code></td>
-<td style="text-align:right">生成模板代码</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌥T</code></td>
-<td style="text-align:right">Surround With: if、while、try-catch、synchronized 等等</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘PlusMinus</code></td>
-<td style="text-align:right">展开折叠代码块</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"></td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌃O</code></td>
-<td style="text-align:right">查找工程内的文件或方法或字段</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>F4</code></td>
-<td style="text-align:right">定位到属性、方法、类等它们的声明</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘F</code></td>
-<td style="text-align:right">查找 ⌘G 定位到下一个</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘E</code></td>
-<td style="text-align:right">最近打开</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌃⌥H</code></td>
-<td style="text-align:right">方法调用</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌃H</code></td>
-<td style="text-align:right">类层级</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘F12</code></td>
-<td style="text-align:right">方法结构</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘U</code></td>
-<td style="text-align:right">父类同名方法</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"></td>
-<td style="text-align:right"></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘⌃O</code></td>
-<td style="text-align:right">全屏切换</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌃R</code></td>
-<td style="text-align:right">Build and Run</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘,</code></td>
-<td style="text-align:right">Android Studio Preferences</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align:center"><code>⌘;</code></td>
-<td style="text-align:right">Project Structure</td>
-</tr>
-</tbody>
-</table>
-
-          
+          <blockquote>
+<p>目前整理了Mac版的AS快捷键，Windows版的暂时没有用到等以后再整理吧。</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/17/Android Studio Hot Key/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1207,8 +906,8 @@ $(selector).show(speed,callback);
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Plan/" itemprop="url" rel="index">
-                    <span itemprop="name">Plan</span>
+                  <a href="/categories/学习计划/" itemprop="url" rel="index">
+                    <span itemprop="name">学习计划</span>
                   </a>
                 </span>
 
@@ -1250,8 +949,8 @@ $(selector).show(speed,callback);
 
       
         
-          <h3 id="初级工程师"><a href="#初级工程师" class="headerlink" title="初级工程师"></a>初级工程师</h3><blockquote>
-<p>Android入门的时候，需要有一本入门书，好好学习书中的内容，同时花一年时间把Android官方文档中的training和guide看一遍，同时通过写博客和记笔记的方式来做总结，建议让自己的每篇博客都有价值些。</p>
+          <blockquote>
+<p>前段时间浏览了一下招聘网站，看到对于Android开发工程师的级别分类，了解了一些资料才知道开发工程师有研究方向和级别的划分，看了网友的一篇博客，根据他的经验整理了一些东西，后期会把自己的经验也加上去。</p>
 </blockquote>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/12/Android应用开发工程师成长之路/#more" rel="contents">
@@ -1333,7 +1032,7 @@ $(selector).show(speed,callback);
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -1342,7 +1041,7 @@ $(selector).show(speed,callback);
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
